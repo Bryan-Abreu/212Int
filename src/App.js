@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/home/Home';
 import Navbar from './components/nav/index';
@@ -12,14 +12,20 @@ import Sidebar from './components/SideBar/index';
 
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  }
+
   return (
 <React.Fragment>
 
 
 
 <BrowserRouter>
-    <Sidebar />
-     <Navbar/> 
+    <Sidebar isOpen={isOpen} toggle={toggle}/>
+     <Navbar toggle={toggle}/> 
 <Routes>
   <Route path='/' element={<Home />}></Route>
   <Route path='/aboutUs' element={<AboutUs />}></Route>

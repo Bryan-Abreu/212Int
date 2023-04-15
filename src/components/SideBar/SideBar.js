@@ -15,7 +15,7 @@ left:0;
 transition: 0.3s ease-in-out;
 opacity: ${({isOpen}) =>(isOpen ? '100%' : '0')};
 top: ${({isOpen}) => (isOpen ? '0' : '-100%')};  
-top:0
+
 
 `;
 
@@ -50,8 +50,9 @@ text-align: center;
 
 export const SidebarLink = styled(Link)`
 display: flex;
+margin-left: -30px;
 align-items: center;
-justify-contenet: center;
+justify-content: center;
 font-size: 1.5rem;
 text-decoration: none;
 list-style:none;

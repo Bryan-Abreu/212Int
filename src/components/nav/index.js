@@ -8,21 +8,22 @@ import { Nav,
   NavMenu,
   NavLink, 
   NavBtn,
-  NavBtnLink
+  NavBtnLink,
 } from './Nav'
+import Logo from '../../images/212 International.png'
 
 
-const Navbar = () => {
+const Navbar = ({toggle}) => {
   return (
     <>
     <Nav>
       <NavBarContainer>
-        <NavLogo to='/'>212</NavLogo>
-        <MobileIcon>
+        <NavLogo to='/' src={Logo}/>
+        <MobileIcon onClick={toggle}>
           <FaBars />
         </MobileIcon>
         <NavMenu>
-          <NavItem>
+         <NavItem>
             <NavLink to='/'>Home</NavLink>
           </NavItem>
           <NavItem>
@@ -36,11 +37,11 @@ const Navbar = () => {
           </NavItem>
           <NavItem>
             <NavLink to="/tips">Tips</NavLink>
-          </NavItem>
+          </NavItem>         
+        </NavMenu>
           <NavBtn>
             <NavBtnLink to="/LogIn">Log in</NavBtnLink>
           </NavBtn>
-        </NavMenu>
       </NavBarContainer>
     </Nav>
     </>
